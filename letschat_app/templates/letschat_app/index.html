@@ -1,0 +1,41 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Room</title>
+    {% tailwind_css %}
+</head>
+<body class="bg-slate-100 font-serif leading-normal tracking-normal mx-auto">
+    <div class="container mx-auto">
+        <section class="flex flex-col items-center justify-center h-screen">
+            <h1 class="text-5xl text-center">What chat room would you like to enter?</h1>
+            <form method="POST" enctype="multipart/form-data" class="w-full max-w-sm">
+                {% csrf_token %}
+                <div class="md:flex md:justify-center mb-6 flex-col">
+                    {% for field in form.visible_fields %}
+                        {{ field.label }}
+                        {{ field }}
+                    {% endfor %}
+                </div>
+                <input id="room-name-submit" type="submit" value="Enter" class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
+            </form>
+        </section>
+    </div>
+    
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        {% comment %} document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName + '/';
+        }; {% endcomment %}
+    </script>
+</body>
+</html>
