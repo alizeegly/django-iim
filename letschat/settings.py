@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'letschat_app.apps.LetschatAppConfig',
+    'crud_app.apps.CrudAppConfig',
     'tailwind'
 ]
 
