@@ -8,9 +8,9 @@
 - /:id/delete : Supprimer une question
 
 ## APP 2 : CHAT - /chat
-Ouvrir 2 fois la fenêtre
-Entrer un nom de room ainsi qu'un pseudo
-Discuter !
+- Ouvrir 2 fois la fenêtre
+- Entrer un nom de room ainsi qu'un pseudo
+- Discuter !
 
 ## ADMIN - /admin
 Possibilité de voir et modifier les rooms, chats, questions...
